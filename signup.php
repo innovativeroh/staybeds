@@ -48,7 +48,7 @@
         <label for="name"><span>Repeat Password <f style='color: red;'>*</f></span> 
         <input type="password" name="r_password" placeholder="Repeat Password" class="input_styler" required>
         <input type="submit" name="login" value="Login" class="button_styler">
-        <center><p>Already have account? <a href='login.php' class='reg-class'>Login</a><p></center>
+        <center>Already have account? <a href='login.php' class='reg-class'>Login</a></center>
     </form>
     </div>
 </div>

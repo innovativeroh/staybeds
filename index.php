@@ -36,7 +36,30 @@
         <br>
         <h2 style="color: #222;">Top <f style='font-weight: 300;'>Ratings </f> <i class="fa-solid fa-arrow-trend-up"></i></h2>
         <div class="carousel" data-flickity='{ "autoPlay": true, "wrapAround": true }'>
-  <div class="carousel-cell" style="background-color: #317431; background-image: url('assets/img/room (1).jpg'); background-size: cover;">
+        <?php
+    $sql = "SELECT * FROM `pages` WHERE `deleted`='0' ORDER BY `id` ASC";
+    $query = mysqli_query($conn, $sql);
+    while($rows = mysqli_fetch_assoc($query)) {
+        $id = $rows['id'];
+        $name = $rows['name'];
+        $price = $rows['price'];
+        $token = $rows['token'];
+        $sql2 = "SELECT * FROM `pages_media` ORDER BY `id` LIMIT 1";
+        $query2 = mysqli_query($conn, $sql2);
+        $row = mysqli_fetch_assoc($query2);
+        $url = $row['url'];
+    ?><div  onclick="location.href='page.php?code=<?=$token?>';" class="carousel-cell" style="background-color: #317431; background-image: url(<?=$url?>); background-size: cover;">
+        <div class="carousel-overlay">
+          <div class="name-location">
+              <h3><?=$name?></h3>
+              <p style="display: inline; color: #fff;"><i class="fa-solid fa-location-crosshairs"></i><?=$city?></p><span><?=$price?></span>
+          </div>
+          </div>
+        </div>
+    <?php
+    }
+  ?>
+        <div class="carousel-cell" style="background-color: #317431; background-image: url('assets/img/room (1).jpg'); background-size: cover;">
   <div class="carousel-overlay">
     <div class="name-location">
         <h3>Himanshu's PG</h3>
@@ -102,7 +125,30 @@
   </div>
   <h2 style="color: #222;">Dis<f style='font-weight: 300;'>counts</f> <i class="fa-solid fa-arrow-trend-up"></i></h2>
         <div class="carousel" data-flickity='{ "autoPlay": true, "wrapAround": true }'>
-  <div class="carousel-cell" style="background-color: #317431; background-image: url('assets/img/room (1).jpg'); background-size: cover;">
+        <?php
+    $sql = "SELECT * FROM `pages` WHERE `deleted`='0' ORDER BY `id` ASC";
+    $query = mysqli_query($conn, $sql);
+    while($rows = mysqli_fetch_assoc($query)) {
+        $id = $rows['id'];
+        $name = $rows['name'];
+        $price = $rows['price'];
+        $token = $rows['token'];
+        $sql2 = "SELECT * FROM `pages_media` ORDER BY `id` LIMIT 1";
+        $query2 = mysqli_query($conn, $sql2);
+        $row = mysqli_fetch_assoc($query2);
+        $url = $row['url'];
+    ?><div  onclick="location.href='page.php?code=<?=$token?>';" class="carousel-cell" style="background-color: #317431; background-image: url(<?=$url?>); background-size: cover;">
+        <div class="carousel-overlay">
+          <div class="name-location">
+              <h3><?=$name?></h3>
+              <p style="display: inline; color: #fff;"><i class="fa-solid fa-location-crosshairs"></i><?=$city?></p><span><?=$price?></span>
+          </div>
+          </div>
+        </div>
+    <?php
+    }
+  ?>
+        <div class="carousel-cell" style="background-color: #317431; background-image: url('assets/img/room (1).jpg'); background-size: cover;">
   <div class="carousel-overlay">
     <div class="name-location">
         <h3>Himanshu's PG</h3>

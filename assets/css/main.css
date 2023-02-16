@@ -32,9 +32,9 @@ header {
     box-shadow: 1px 1px 2.5px #eee;
 }
 #wrapper {
+    max-width: 1600px;
     margin-right: auto;
     margin-left: auto;
-    max-width: 1600px;
     padding-right: 30px;
     padding-left: 30px;
 }

@@ -83,14 +83,34 @@
         <div class='booking_area'>
         <h3 style='line-height: 25px;'>Enquire Now!</h3>
         <?php if (isset($_SESSION['username'])) {?>
-        <label for="date_selection">BOOKING DATE</label>
-            <input type="date" name="date_selection" class="input">
+            <?php
+            $success = "0";
+                if(isset($_POST['send'])) {
+                $e_date = @$_POST['date_selection'];
+                $e_query = @$_POST['query'];
+                $sql = "INSERT INTO `page_enquiry`(`id`, `date`, `bio`, `user`, `connection`) VALUES (null,'$e_date','$e_query','$global_id','$id')";
+                $query = mysqli_query($conn, $sql);
+                $success = "1";
+            }
+            if(!$success == "1") {
+            ?>
+            <form action="page.php?code=<?=$token?>" method="POST">
+            <label for="date_selection">BOOKING DATE</label>
+            <input type="date" onfocus="this.showPicker()" min="<?=date('Y-m-d');?>" value="<?=date('Y-m-d');?>" name="date_selection" class="input">
 <br><br>
             <label for="date_selection">Your Query?</label>
             <textarea name="query" class="query"></textarea>
-            <button type="submit">Send</button>
+            <button type="submit" name="send">Send</button>
         </div>
-<?php } else { ?>
+        </form>
+<?php } else {
+    ?>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <center><lottie-player src="https://assets6.lottiefiles.com/packages/lf20_zwkm4xbs.json"  background="transparent"  speed="1"  style="width: 150px; height: 150px;" autoplay></lottie-player>
+    <p>Your Enquiry Has Been Sent!</p>
+</center>
+    <?php
+}} else { ?>
     <p style='line-height: 20px;'>You must be logged in before enqiring!
     <a href='login.php'><button>Login / Sign Up</button></a><p>
 <?php } ?>

@@ -10,5 +10,11 @@ $global_id = "";
 session_start();
 if (isset($_SESSION['username'])) {
     $user = $_SESSION["username"];
+    $sql = "SELECT * FROM `users` WHERE email='$user'";
+    $query = mysqli_query($conn, $sql);
+    while ($rows = mysqli_fetch_assoc($query)) {
+        $global_id = $rows['id'];
+        $global_name = $rows['name'];
+    }
 }
 ?>

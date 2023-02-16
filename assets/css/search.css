@@ -1,0 +1,128 @@
+.search-flex-container {
+    display: flex;
+    flex-direction: row;
+    margin-top: 80px;
+}
+.search-flex-container .search-filter-area {
+    flex: 2.5;
+    margin: 10px;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+}
+.search-flex-container .search-area {
+    flex: 7.5;
+    margin: 10px;
+}
+.search-card-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    padding: 10px;
+    gap: 10px;
+}
+.search-card-container .search-card {
+    background: #fff;
+    border-radius: 4px;
+    border: 1px solid #fff;
+    width: 100%;
+    box-sizing: border-box;
+}
+.search-card * {
+    cursor: pointer;
+}
+.search-card img {
+    object-fit: cover;
+    border-top-right-radius: 4px;
+    border-top-left-radius: 4px;
+}
+.search-card .title {
+    text-decoration: none;
+    text-transform: capitalize;
+    font-size: 16px;
+    color: #111;
+    font-weight: 500;
+}
+.search-card .location {
+    font-size: 10.5px;
+    color: #888;
+}
+.search-card span {
+    padding: 5px;
+    font-size: 10px;
+    color: #111;
+    background: #f1f1f1;
+    border: 1px solid #f1f1f1;
+    border-radius: 5px;
+    margin-top: 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    float: left;
+    transition: all ease 300ms;
+}
+.search-card span:hover {
+    background: #6aa84f;
+    color: #fff;
+    border: 1px solid #6aa84f;
+}
+.filter-title {
+    font-weight: 400;
+    font-size: 14px;
+    color: #222;
+}
+.filter-title-king {
+    font-size: 20px;
+    font-weight: 500;
+    color: #222;
+}
+.search_filter_textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    font-weight: 400;
+    color: #333;
+    border: 1px solid #f1f1f1;
+    background: #f1f1f1;
+    border-radius: 5px;
+    margin-top: 0px;
+    box-sizing: border-box;
+    outline: none;
+    transition: all ease 300ms;
+}
+.filter_btn {
+    width: 100%;
+    border: 1px solid #6aa84f;
+    background: #6aa84f;
+    color: #fff;
+    font-weight: 600;
+    font-size: 14px;
+    margin-top: 0px;
+    border-radius: 8px;
+    padding: 10px;
+    box-sizing: border-box;
+    transition: all ease 300ms;
+}
+.search_filter_textarea:focus, .search_filter_textarea:hover, .filter_btn:hover {
+    background: #fff;
+    color: #111;
+}
+@media screen and (max-width: 992px) {
+    .search-card-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        padding: 10px;
+        gap: 10px;
+    }
+}
+@media screen and (max-width: 800px) {
+    .search-flex-container {
+        display: flex;
+        flex-direction: column;
+        margin-top: 50px;
+    }
+    .search-card-container {
+        display: grid;
+        grid-template-columns: 1fr;
+        padding: 10px;
+        gap: 10px;
+    }
+}

@@ -1,0 +1,86 @@
+#more_wrapper {
+    max-width: 1200px;
+    margin-right: auto;
+    margin-left: auto;
+}
+.flex_cont {
+    display: flex;
+    flex-direction: row;
+}
+.flex {
+    margin: 20px;
+    background: #fff;
+    border-radius: 10px;
+    padding: 40px;
+    box-sizing: border-box;
+}
+.flex_cont span {
+    display: block;
+    font-size: 14px;
+    font-weight: 400;
+    color: #333;
+}
+.flex_cont input {
+    width: 100%;
+    padding: 14px;
+    font-size: 12px;
+    margin-top: 10px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    outline: none;
+}
+.flex_cont select {
+    width: 100%;
+    padding: 14px;
+    font-size: 12px;
+    margin-top: 10px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    outline: none;
+}
+.flex_cont textarea {
+    width: 100%;
+    margin-top: 10px;
+    resize: none;
+    height: 180px;
+    border: 1px solid #ccc;
+    outline: none;
+    padding: 10px;
+}
+.flex_contt {
+    flex-direction: row;
+    display: flex;
+    gap: 20px;
+}
+.review_alert {
+    display: block;
+    padding: 10px;
+    box-sizing: border-box;
+    border: 2px dashed #efc050;
+    color: #efc050;
+    font-weight: 600;
+    font-size: 12px;
+    border-radius: 10px;
+}
+.sidebar_btn {
+    display: block;
+    background: transparent;
+    border: 1px solid #fff;
+    border-radius: 10px;
+    font-weight: 400;
+    font-size: 14.5px;
+    text-decoration: none;
+    padding: 12px;
+    margin-top: 10px;
+    cursor: pointer;
+    width: 100%;
+    text-align: left;
+    transition: all ease 300ms;
+}
+.sidebar_btn:hover {
+    background: #eee;
+}
+.sidebar_btn a {
+    color: #333;
+    text-decoration: none;
+}

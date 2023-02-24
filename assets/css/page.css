@@ -101,6 +101,23 @@
     background: #111;
     border: 1px solid #111;
 }
+.page_edit_btn {
+    padding: 10px 20px;
+    border-radius: 10px;
+    background: #6aa84f;
+    border: 1px solid #6aa84f;
+    color: #fff;
+    font-weight: 500;
+    margin-top: -10px;
+    cursor: pointer;
+    transition: all ease 300ms;
+    font-weight: 500;
+    text-decoration: none !important;
+}
+.page_edit_btn:hover {
+    background: #111;
+    border: 1px solid #111;
+}
 @media (max-width: 1200px) {
     .flex_container_page {
         display: flex;

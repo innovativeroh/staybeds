@@ -39,7 +39,15 @@
     <br><br><br>
             <div class="more_wrapper">
                 <div style="padding: 20px; box-sizing: border-box;">
-                <h1 style='font-weight: 500; font-size: 28px; line-height: 0px;'><?=$name?></h1>
+                <br>
+                <h1 style='font-weight: 500; font-size: 28px; line-height: 0px; display: inline;'><?=$name?>
+                <?php if($global_id == $admin) {
+                ?>
+                <a href='edit.php?code=<?=$token?>'><button style='float: right;' class='page_edit_btn'><i class="fa-solid fa-pen-to-square"></i> Edit</button></h1></a>
+                <?php
+            }
+                ?>
+                <div style='clear: both'></div>
                 <a href='#' style='color: #000; font-size: 14px;'><i class="fa-solid fa-location-crosshairs"></i> <?=$city.", ".$zip_code?></a>
                 <br><br>
             <div class="carousel" data-flickity='{ "autoPlay": true, "wrapAround": true, "pageDots": false }'>
@@ -120,7 +128,7 @@
 </div>
 <div id="wrapper">
 <h2 style="color: #222;">Find <f style='font-weight: 300;'>More</f></h2>
-        <div class="carousel" data-flickity='{ "autoPlay": true, "wrapAround": true }'>
+        <div class="carousel" data-flickity='{ "autoPlay": true, "wrapAround": true}'>
   <?php
     $sql = "SELECT * FROM `pages` WHERE `deleted`='0' ORDER BY `id` ASC";
     $query = mysqli_query($conn, $sql);
@@ -188,5 +196,6 @@
             </div>
         </div>
 </div>
+
 <br><br>
 <?php include_once("config/footer.php"); ?>

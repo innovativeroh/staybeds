@@ -25,8 +25,10 @@ header {
 #header_search {
     padding: 15px;
     padding-left: 20px;
-    width: 450px;
+    width: 550px;
+    font-weight: 500;
     border-radius: 20px;
+    font-size: 15px;
     border: 1px solid #eee;
     outline: none;
     box-shadow: 1px 1px 2.5px #eee;
@@ -42,8 +44,8 @@ header {
     position: absolute;
     padding: 10px;
     border-radius: 100%;
-    left: 400px;
-    top: 5px;
+    left: 505px;
+    top: 7px;
     background: #6aa84f;
     border: 1px solid #6aa84f !important;
     cursor: pointer;
@@ -128,6 +130,56 @@ box-sizing: border-box;
     transition: all ease 300ms;
     cursor: pointer;
 }
+.modal-content{
+    padding: 25px;
+    width: 100%;
+}
+.profile_section {
+    display: flex;
+    float: right;
+    align-items: center;
+    flex-direction: row;
+    gap: 10px;
+    padding: 10px;
+    border: 1px solid #eee;
+    border-radius: 10px;
+    margin-left: 20px;
+    cursor: pointer;
+    transition: all ease 300ms;
+}
+.profile_section:hover {
+    background: #eee;
+}
+.profile_section div p {
+    line-height: 0px;
+    font-size: 12px;
+    font-weight: 500;
+    color: #444;
+}
+.profile_section div i {
+    font-size: 25px;
+    color: #444;
+}
+.modaal-container{
+    max-width: 440px !important;
+    border-radius: 20px !important;
+}
+
+.modal-header{
+    background-color: #fff;
+    border-radius: 20px 20px 0px 0px !important;
+}
+
+.header-container{
+    border-bottom: 1px solid #ccc;
+    padding: 25px;
+}
+
+.modaal-content-container{
+    padding: 0 !important;
+}
+
+
 .header_button_text:hover {
     background: #111;
     border: 1px solid #111;
@@ -412,6 +464,17 @@ footer .flex-container .flex a {
     text-decoration: none;
     color: #fff;
     font-size: 12px;
+}
+.modaal-content-container  {
+    padding: 0 none !important;
+}
+.city_selector {
+    width: 100%;;
+    padding: 13.5px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    margin-bottom: 20px;
 }
 @media (max-width: 1000px) {
     .login-form {

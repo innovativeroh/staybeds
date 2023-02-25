@@ -89,7 +89,7 @@
 </div>
     <div class="flex" style='padding: 0px; flex: 3; margin: 20px 10px; border-radius: 10px;'>
         <div class='booking_area'>
-        <h3 style='line-height: 25px;'>Enquire Now!</h3>
+        <h3 style='line-height: 25px;'>Book Now!</h3>
         <?php if (isset($_SESSION['username'])) {?>
             <?php
             $success = "0";
@@ -103,11 +103,7 @@
             if(!$success == "1") {
             ?>
             <form action="page.php?code=<?=$token?>" method="POST">
-            <label for="date_selection">BOOKING DATE</label>
             <input type="date" onfocus="this.showPicker()" min="<?=date('Y-m-d');?>" value="<?=date('Y-m-d');?>" name="date_selection" class="input">
-<br><br>
-            <label for="date_selection">Your Query?</label>
-            <textarea name="query" class="query"></textarea>
             <button type="submit" name="send">Send</button>
         </div>
         </form>
@@ -140,7 +136,6 @@
         $sql2 = "SELECT * FROM `pages_media` ORDER BY `id` LIMIT 1";
         $query2 = mysqli_query($conn, $sql2);
         $row = mysqli_fetch_assoc($query2);
-        $url = $row['url'];
     ?><div  onclick="location.href='page.php?code=<?=$token?>';" class="carousel-cell" style="background-color: #317431; background-image: url(<?=$url?>); background-size: cover;">
         <div class="carousel-overlay">
           <div class="name-location">

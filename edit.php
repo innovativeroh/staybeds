@@ -64,7 +64,47 @@
                 <textarea name='pg_description' class='description-input'><?=$bio?></textarea> 
                 <br><br>
                     <hr style='border: 0 none; height: 1px; background: #eee;'><br>
-                <div class='flex_contt'>
+                    <div class='flex_contt'>
+                        <span>Amenities</span>
+                    <div style='flex: 1;'>
+                    <?php
+                    $sql = "SELECT * FROM `config_amenities`";
+                    $query = mysqli_query($conn, $sql);
+                    while($rows = mysqli_fetch_assoc($query)) {
+                        $id = $rows['id'];
+                        $value = $rows['value'];
+                        echo "<input type='checkbox' name='$value'>$value";
+                    }
+?>
+</div>
+                </div>
+                <br><br>
+                    <hr style='border: 0 none; height: 1px; background: #eee;'><br>
+                    <div class='flex_contt'>
+                    <div style='flex: 1;'>
+                        <span>Preferred Gender</span>
+                        <select name='pg_city'>
+                            <option value="Male">Male</option>
+                            <option value="Male">Female</option>
+                            <option value="Unisex">Unisex</option>
+                        </select>
+                    </div>
+                    <div style='flex: 1;'>
+                        <span>Minimum Stay Periods (In Month's)</span>
+                        <select name='pg_city'>
+                        <option value="Male">None</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+            </select>
+                    </div>
+                </div>
+                <br><br>
+                    <hr style='border: 0 none; height: 1px; background: #eee;'><br>
+                    <div class='flex_contt'>
                     <div style='flex: 1;'>
                         <span>City</span>
                         <select name='pg_city'>

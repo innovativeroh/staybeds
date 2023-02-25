@@ -47,7 +47,6 @@
         $sql2 = "SELECT * FROM `pages_media` ORDER BY `id` LIMIT 1";
         $query2 = mysqli_query($conn, $sql2);
         $row = mysqli_fetch_assoc($query2);
-        $url = $row['url'];
     ?><div  onclick="location.href='page.php?code=<?=$token?>';" class="carousel-cell" style="background-color: #317431; background-image: url(<?=$url?>); background-size: cover;">
         <div class="carousel-overlay">
           <div class="name-location">
@@ -136,8 +135,7 @@
         $sql2 = "SELECT * FROM `pages_media` ORDER BY `id` LIMIT 1";
         $query2 = mysqli_query($conn, $sql2);
         $row = mysqli_fetch_assoc($query2);
-        $url = $row['url'];
-    ?><div  onclick="location.href='page.php?code=<?=$token?>';" class="carousel-cell" style="background-color: #317431; background-image: url(<?=$url?>); background-size: cover;">
+    ?><div  onclick="location.href='page.php?code=<?=$token?>';" class="carousel-cell" style="background-color: #fff;">
         <div class="carousel-overlay">
           <div class="name-location">
               <h3><?=$name?></h3>
@@ -148,7 +146,31 @@
     <?php
     }
   ?>
-        <div class="carousel-cell" style="background-color: #317431; background-image: url('assets/img/room (1).jpg'); background-size: cover;">
+        <div class="carousel-cell" style="background-color: #fff; height: 380px;">
+  <div class="carousel-overlay">
+    <div class="name-location">
+        <h3>Himanshu's PG</h3>
+        <p style='display: inline; color: #fff;'><i class="fa-solid fa-location-crosshairs"></i> Udaipur</p><span>₹3,000</span>
+    </div>
+    </div>
+  </div>
+  <div class="carousel-cell" style="background-color: #fff;">
+  <div class="carousel-overlay">
+    <div class="name-location">
+        <h3>Himanshu's PG</h3>
+        <p style='display: inline; color: #fff;'><i class="fa-solid fa-location-crosshairs"></i> Udaipur</p><span>₹3,000</span>
+    </div>
+    </div>
+  </div>
+  <div class="carousel-cell" style="background-color: #fff;">
+  <div class="carousel-overlay">
+    <div class="name-location">
+        <h3>Himanshu's PG</h3>
+        <p style='display: inline; color: #fff;'><i class="fa-solid fa-location-crosshairs"></i> Udaipur</p><span>₹3,000</span>
+    </div>
+    </div>
+  </div>
+        <div class="carousel-cell" style="background-color: #fff;">
   <div class="carousel-overlay">
     <div class="name-location">
         <h3>Himanshu's PG</h3>
@@ -164,30 +186,7 @@
     </div>
     </div>
   </div>
-  <div class="carousel-cell" style="background-color: #317431; background-image: url('assets/img/room (3).jpg'); background-size: cover;">
-  <div class="carousel-overlay">
-    <div class="name-location">
-        <h3>Himanshu's PG</h3>
-        <p style='display: inline; color: #fff;'><i class="fa-solid fa-location-crosshairs"></i> Udaipur</p><span>₹3,000</span>
-    </div>
-    </div>
-  </div>
-  <div class="carousel-cell" style="background-color: #317431; background-image: url('assets/img/room (4).jpg'); background-size: cover;">
-  <div class="carousel-overlay">
-    <div class="name-location">
-        <h3>Himanshu's PG</h3>
-        <p style='display: inline; color: #fff;'><i class="fa-solid fa-location-crosshairs"></i> Udaipur</p><span>₹3,000</span>
-    </div>
-    </div>
-  </div>
-  <div class="carousel-cell" style="background-color: #317431; background-image: url('assets/img/room (5).jpg'); background-size: cover;">
-  <div class="carousel-overlay">
-    <div class="name-location">
-        <h3>Himanshu's PG</h3>
-        <p style='display: inline; color: #fff;'><i class="fa-solid fa-location-crosshairs"></i> Udaipur</p><span>₹3,000</span>
-    </div>
-    </div>
-  </div>
+
   </div><br><br><br>
   <h2 style="color: #222;">Discover Our Beautiful <f style='font-weight: 300;'>India</f> <i class="fa-solid fa-arrow-trend-up"></i></h2>
   <div class="carousel" data-flickity='{ "autoPlay": true, "freeScroll": true,

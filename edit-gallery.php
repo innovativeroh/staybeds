@@ -33,7 +33,9 @@
                 <button class='sidebar_btn'><a href='page.php?code=<?=$token?>'><i class="fa-solid fa-eye" style='padding-right: 10px;'></i> View Page</a></button>
             </div>
             <div class='flex' style='flex: 7.5;'>
-
+            <?php
+                echo mysqli_uploaderd;
+            ?>
         </div>
     </div>
 </div>

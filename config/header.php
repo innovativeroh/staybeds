@@ -58,11 +58,10 @@
             <div class="modal-body">
                 <div class="modal-content">
                     <div id="loginMobile">
-                        <h2 style='font-size: 20px; color: #333;'>List Your PG</h2>
-                        <br><br>
-                        <center><img src='./assets/img/pg_listing.svg' width="60%"></center>
-                        <br><br>
+                        <h2>Post Property</h2>
+                        <p class='label_area'>Tell us something about yourself?</p>
                         <?php
+                            $author = @$_POST['author'];
                             $city = @$_POST['city'];
                             $pg_name = @$_POST['pg_name'];
                             $date = date('d-m-y');
@@ -72,30 +71,38 @@
                                     return substr(str_shuffle(str_repeat($x='0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ', ceil($length/strlen($x)) )),1,$length);
                                 }
                                 $token = generateRandomString();
-                            $sql = "INSERT INTO `pages`(`id`, `name`, `price`, `bio`, `token`, `city`, `address`, `zip_code`, `admin`, `date`, `deleted`) VALUES (null,'$pg_name','','','$token','$city','','','$global_id','$date','0')";
+                            $sql = "INSERT INTO `pages`(`id`, `name`, `price`, `bio`, `token`, `city`, `address`, `zip_code`, `admin`, `author`, `date`, `deleted`) VALUES (null,'$pg_name','','','$token','$city','','','$global_id','$author','$date','0')";
                             $query = mysqli_query($conn, $sql);
                             echo "<meta http-equiv=\"refresh\" content=\"0; url=edit.php?code=$token\">";
                     exit();
                         }
                         ?>
                         <form action='index.php' method='POST'>
-                            <br>
-                            <p style='color: #888; font-size: 13.5px; line-height: 0;'>Where's the location?</p>    
-                        <select name='city' class='city_selector'>
-                            <?php
+                        <div class='radio_container'>
+                        <input type='radio' name='author' value='Owner' id='one' checked>
+                            <label for="one">Owner</label>
+                            <input type='radio' name='author' value='Agent' id='two' >
+                            <label for="two">Agent</label>
+                        </div>
+                        <hr style='margin: 20px 0px; height: 1px; border: 0 none; background: #f1f1f1;'>
+                        <p class='label_area'>Select City your property is located in</p>
+                        <select name='city' class='city_selector' required>
+                        <option value=''>Select City</option>
+                        <?php
                     $sql = "SELECT * FROM `config_city` ORDER BY `value`";
                     $query = mysqli_query($conn, $sql);
                     while($rows = mysqli_fetch_assoc($query)) {
                         $value = $rows['value'];
-                        echo "<option name='$value'>$value</option>";
+                        echo "<option value='$value'>$value</option>";
                     }
                 ?>
                         </select>
-                        <br>
-                        <p style='color: #888; font-size: 13.5px; line-height: 0;'>What do you call it?</p>    
-                        <input type='text' name='pg_name' placeholder='Star Inn PG' class='city_selector'>
+                        <hr style='margin: 20px 0px; height: 1px; border: 0 none; background: #f1f1f1;'>
+                        <p class='label_area'>What do you call your PG / Hostel?</p>
+                        <input type='text' name='pg_name' placeholder='Atelier' class='huge_input' required>
+<br><br>
                         <button type="submit" name="create_pg" class="button_styler">Create <i class="fa-sharp fa-solid fa-arrow-right"></i></button>
-                        </form>
+                </form>
                     </div>
                     </div>
                     </div>

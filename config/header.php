@@ -149,3 +149,4 @@ $('.inline').modaal({
 });
   </script>
 
+<script src="https://kit.fontawesome.com/70edc5e2f3.js" crossorigin="anonymous"></script>

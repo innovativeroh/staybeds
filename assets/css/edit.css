@@ -147,6 +147,8 @@
     color: #000;
     border-radius: 10px;
     cursor: pointer;
+    background-color: transparent;
+    border: 1px solid #ccc;
 }
 
 .settings .radio_container2 input[type="radio"]:checked + label {

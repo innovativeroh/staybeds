@@ -43,9 +43,9 @@
                     </div>
                     <hr style='height: 1px; background: #eee; border: 0 none;'>
                     <p style='font-weight: 600; letter-spacing: 1px; color: #333;'>Settings</p>
-                    <a href='#'><button class='active'><i class="fa-solid fa-gauge"></i> Dashboard</button></a>
-                    <a href='#'><button><i class="fa-solid fa-people-roof"></i> Rooms</button></a>
-                    <a href='page.php?code=<?$token?>'><button><i class="fa-solid fa-eye"></i> View Page</button></a>
+                    <a href='edit.php?code=<?=$token?>'><button class='active'><i class="fa-solid fa-gauge"></i> Dashboard</button></a>
+                    <a href='edit-rooms.php?code=<?=$token?>'><button><i class="fa-solid fa-people-roof"></i> Rooms</button></a>
+                    <a href='page.php?code=<?=$token?>'><button><i class="fa-solid fa-eye"></i> View Page</button></a>
                 </div>
             </div>
             <div class='flex settings' style='flex: 7.5;'>

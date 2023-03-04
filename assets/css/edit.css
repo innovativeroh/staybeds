@@ -255,3 +255,37 @@
 .config_back_btn:hover {
     background: #ccc;
 }
+.room_box_area {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 10px 20px;
+    box-sizing: border-box;
+    border: 1px solid #eee;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+.flex_box {
+    flex: 1;
+}
+.room_box_area .flex_box i {
+    margin-right: 10px;
+    color: 888;
+}
+.spilited_comma {
+    display: inline;
+    margin-right: 10px;
+    border-radius: 10px;
+    color: #317431;
+    transition: all ease 300ms;
+}
+.delete_box_area {
+    width: auto !important;
+    float: right;
+    background-color: #6aa84f !important;
+    border: 1px solid #6aa84f !important;
+    color: #fff !important;
+}
+.delete_box_area i {
+    padding: 0px !important;
+}

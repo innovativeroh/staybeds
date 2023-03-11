@@ -12,6 +12,7 @@
         $bio = $rows['bio'];
         $token = $rows['token'];
         $city = $rows['city'];
+        $pre_address = $rows['pre_address'];
         $address = $rows['address'];
         $zip_code = $rows['zip_code'];
         $admin = $rows['admin'];
@@ -65,10 +66,21 @@
   <?php
     $sql = "SELECT * FROM `pages_room` WHERE `connection`='$id'";
     $query = mysqli_query($conn, $sql);
-
+    $count = mysqli_num_rows($query);
+    if($count > 0) {
     while($row = mysqli_fetch_assoc($query)) {
         $final_image = "data/rooms/".$img_1 = $row['img_1'];
         $final_image_2 = "data/rooms/".$img_2 = $row['img_2'];
+        if($final_image == "data/rooms/") {
+            $final_image = "assets/img/default_cover.jpg";
+        } else {
+            $final_image = $final_image;
+        }
+        if($final_image_2 == "data/rooms/") {
+            $final_image_2 = "assets/img/default_cover.jpg";
+        } else {
+            $final_image_2 = $final_image_2;
+        }
 ?>
 <div class="carousel-cell" style="width: 100%; height: 400px; background-image: url('<?=$final_image?>'); background-size: cover;">
         <div class="carousel-overlay2">
@@ -80,6 +92,14 @@
         </div>
 <?php
     }
+} else {
+  ?>
+<div class="carousel-cell" style="width: 100%; height: 400px; background-image: url('./assets/img/default_cover.jpg'); background-size: cover;">
+        <div class="carousel-overlay2">
+          </div>
+        </div>
+  <?php
+}
   ?>
 </div>
 <div class="flex_container_page">
@@ -105,6 +125,7 @@
 
     <br><hr></hr><br>
     <h3>Address</h3>
+    <p><?=$pre_address?></p>    
     <p><?=$address?></p>    
     <div style="width: 100%"><iframe class="map" style="border-radius: 12px;" width="100%" height="340" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=100%25&amp;height=520&amp;hl=en&amp;q=<?=$address?>+(My%20Business%20Name)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"><a href="https://www.maps.ie/distance-area-calculator.html">distance maps</a></iframe></div>
         <br><hr></hr>
@@ -229,11 +250,13 @@
         $token = $rows['token'];
         $sql2 = "SELECT * FROM `pages_room` WHERE `connection`='$id' ORDER BY `id` LIMIT 1";
         $query2 = mysqli_query($conn, $sql2);
+        $count = mysqli_num_rows($query2);
+        if($count > 0) {
         $row = mysqli_fetch_assoc($query2);
         $img_1 = $row['img_1'];
-
+        }
     ?>
-    <div  onclick="location.href='page.php?code=<?=$token?>';" class="carousel-cell" style="background-color: #317431; background-image: url(data/rooms/<?=$img_1?>); background-size: cover;">
+    <div  onclick="location.href='page.php?code=<?=$token?>';" class="carousel-cell" style="background-color: #317431; background-image: url('data/rooms/<?=$img_1?>'); background-size: cover;">
         <div class="carousel-overlay">
           <div class="name-location">
               <h3><?=$name?></h3>

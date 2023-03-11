@@ -55,9 +55,13 @@
         $token = $rows['token'];
         $sql2 = "SELECT * FROM `pages_room` WHERE `connection`='$id' ORDER BY `id` LIMIT 1";
         $query2 = mysqli_query($conn, $sql2);
+        $count = mysqli_num_rows($query2);
+        if($count > 0) {
         $row = mysqli_fetch_assoc($query2);
         $img_1 = $row['img_1'];
-    ?><div  onclick="location.href='page.php?code=<?=$token?>';" class="carousel-cell" style="background-color: #317431; background-image: url(data/rooms/<?=$img_1?>); background-size: cover;">
+    }
+    ?>
+    <div  onclick="location.href='page.php?code=<?=$token?>';" class="carousel-cell" style="background-color: #317431; background-image: url('data/rooms/<?=$img_1?>'); background-size: cover;">
         <div class="carousel-overlay">
           <div class="name-location">
               <h3><?=$name?></h3>
@@ -65,6 +69,7 @@
           </div>
           </div>
         </div>
+        
     <?php
     }
   ?>
@@ -108,9 +113,12 @@
         $token = $rows['token'];
         $sql2 = "SELECT * FROM `pages_room` WHERE `connection`='$id' ORDER BY `id` LIMIT 1";
         $query2 = mysqli_query($conn, $sql2);
+        $count = mysqli_num_rows($query2);
+        if($count > 0) {
         $row = mysqli_fetch_assoc($query2);
         $img_1 = $row['img_1'];
-    ?><div  onclick="location.href='page.php?code=<?=$token?>';" class="carousel-cell" style="background-color: #317431; background-image: url(data/rooms/<?=$img_1?>); background-size: cover;">
+    }
+    ?><div  onclick="location.href='page.php?code=<?=$token?>';" class="carousel-cell" style="background-color: #317431; background-image: url('data/rooms/<?=$img_1?>'); background-size: cover;">
         <div class="carousel-overlay">
           <div class="name-location">
               <h3><?=$name?></h3>

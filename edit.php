@@ -9,6 +9,7 @@
         $city = $rows['city'];
         $bio = $rows['bio'];
         $zip_code = $rows['zip_code'];
+        $pre_address = $rows['pre_address'];
         $address = $rows['address'];
         $token = $rows['token'];
         $price = $rows['price'];
@@ -57,12 +58,13 @@
                         $pg_type = @$_POST['pt_type'];
                         $pg_name = @$_POST['pg_name'];
                         $pg_city = @$_POST['city'];
+                        $pre_pg_address = @$_POST['pre_pg_address'];
                         $pg_address = @$_POST['pg_address'];
                         $pg_gender = @$_POST['pt_gender'];
                         $pg_minimum = @$_POST['pt_miminum'];
                         $pg_notice = @$_POST['pt_notice'];
                         if(isset($_POST['save_pg'])) {
-                            $sql = "UPDATE `pages` SET `name`='$pg_name',`city`='$pg_city',`address`='$pg_address',`pg_type`='$pg_type',`category`='$categories',`pg_minimum`='$pg_minimum',`pg_notice`='$pg_notice',`pg_gender`='$pg_gender' WHERE `token`='$token'";
+                            $sql = "UPDATE `pages` SET `name`='$pg_name',`city`='$pg_city',`pre_address`='$pre_pg_address',`address`='$pg_address',`pg_type`='$pg_type',`category`='$categories',`pg_minimum`='$pg_minimum',`pg_notice`='$pg_notice',`pg_gender`='$pg_gender' WHERE `token`='$token'";
                             $query = mysqli_query($conn, $sql);
                             echo "<meta http-equiv=\"refresh\" content=\"0; url=edit.php?code=$token&update=1\">";
                         }
@@ -111,7 +113,8 @@
                     ?>
                         </select>
                         <p class='label_area'>Which city your property is located? <span style='color: red; display: inline;'>*</span></p>
-                        <input type='text' name='pg_address' onkeypress='sole_location()' placeholder='4 BHK Apartment, Sirsi Road, Jaipur' value='<?=$address?>' class='huge_input' id='location_inp' required><br>
+                        <input type='text' name='pre_pg_address' onkeypress='sole_location()' placeholder='Flat Name, House No.' value='<?=$pre_address?>' class='huge_input' id='location_inp' required><br>
+                        <input type='text' name='pg_address' onkeypress='sole_location()' placeholder='Locality, Location, Pin Code' value='<?=$address?>' class='huge_input' id='location_inp' required><br>
                     <iframe class="map" id="location_show" style="border-radius: 12px; margin-top: 20px;" width="100%" height="280" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=100%25&amp;height=520&amp;hl=en&amp;q=<?=$address.", ".$city?>+(My%20Business%20Name)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"><a href="https://www.maps.ie/distance-area-calculator.html">distance maps</a></iframe>
                         <br>
                         <br>

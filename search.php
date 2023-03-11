@@ -41,15 +41,20 @@
                         $city = $rows['city'];
                         $price = $rows['price'];
                         $token = $rows['token'];
-                        $sql2 = "SELECT * FROM `pages_media` ORDER BY `id` LIMIT 1";
+                        $sql2 = "SELECT * FROM `pages_room` WHERE `connection`='$id' ORDER BY `id` LIMIT 1";
                         $query2 = mysqli_query($conn, $sql2);
                         $row = mysqli_fetch_assoc($query2);
-                        $url = $row['url'];
+                        $img_1 = $row['img_1'];
+                        if($img_1 == "") {
+                            $img_final = "assets/img/default_cover.jpg";
+                        } else {
+                            $img_final = "data/rooms/".$img_1;
+                        }
             ?>
             <div class="search-card" onclick="location.href='page.php?code=<?php echo $url; ?>';">
-                <img src="<?=$url?>" width="100%" height="140px">       
+                <img src="<?=$img_final?>" width="100%" height="140px">       
                 <div style="padding-left: 10px; padding-bottom: 10px;">
-                    <a class="title"><?=$name?></a>
+                    <a href="page.php?code=<?=$token?>" class="title"><?=$name?></a>
                     <p class="location"><i class='fa fa-location'></i> <?=$city?></p>
                     <span><?=$token?></span><span>₹<?=$price?></span>
                 </div>

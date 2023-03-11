@@ -27,13 +27,13 @@ if (isset($_SESSION['username'])) {
                 //Error Handlers
                 //Check if inputs are empty
                 if (empty($uid) || empty($pwd)) {
-                    echo "<div class='alert-danger'>Username & Password is Invalid!</div>";
+                    echo "<div class='alert-danger'>Username & Password is Invalid!</div><br>";
                 } else {
                     $sql = "SELECT * FROM users WHERE email='$uid'";
                     $result = mysqli_query($conn, $sql);
                     $resultCheck = mysqli_num_rows($result);
                     if ($resultCheck < 1) {
-                        echo "<div class='alert-danger'>Email is Incorrect!</div>";
+                        echo "<div class='alert-danger'>Email is Incorrect!</div><br>";
                     } else {
                         
                         if ($row = mysqli_fetch_assoc($result)) {
@@ -43,7 +43,7 @@ if (isset($_SESSION['username'])) {
                             //dehashing the password        
                             $hashedPwdCheck = password_verify($pwd, $row['password']);
                             if ($hashedPwdCheck == false) {
-                                echo "<div class='alert-danger'>Wrong password credentials!</div>";
+                                echo "<div class='alert-danger'>Wrong password credentials!</div><br>";
                             } 
                             elseif ($hashedPwdCheck == true) {
                                 $_SESSION['id'] = $id_login;

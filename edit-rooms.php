@@ -108,10 +108,49 @@
                             exit();
                         }
                     ?>
+                                <button chref="" data-modaal-content-source="#add_images<?=$data_id?>" data-modaal-type="inline" data-modaal-animation="fade" class="modaal delete_box_area">Edit Images</button>
+
                                 <button type='submit' name='delete<?=$data_id?>' class='delete_box_area'>Delete</button>
                             </form>
                             </p>
                             </div>
+                    </div>
+                    <div id="add_images<?=$data_id?>" style="display:none;">
+            <div class="modal-body">
+                <div class="modal-content">
+                    <div id="loginMobile">
+                        <h2><?=$data_sharing_type?> Images</h2>
+                        <p class='label_area'>There Should Be Two Images Uploaded!</p>
+                        <?php
+                            if(isset($_POST['upload_img'.$data_id])) {
+                                if (((@$_FILES["img1"]["type"] == "image/jpeg") || (@$_FILES["img1"]["type"] == "image/png") || (@$_FILES["img1"]["type"] == "image/gif")) && (@$_FILES["img1"]["size"] < 10048576) AND ((@$_FILES["img2"]["type"] == "image/jpeg") || (@$_FILES["img2"]["type"] == "image/png") || (@$_FILES["img2"]["type"] == "image/gif")) && (@$_FILES["img2"]["size"] < 10048576)) {
+                                $chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+                                $rand_dir_name = substr(str_shuffle($chars), 0, 15);
+                                mkdir("data/rooms/$rand_dir_name");
+                                if (file_exists("data/rooms/$rand_dir_name/" . @$_FILES['img1']['name']) AND file_exists("data/rooms/$rand_dir_name/" . @$_FILES['img2']['name'])) {
+                                    $error = "Image Already Exists!";
+                                } else {
+                                    move_uploaded_file(@$_FILES['img1']['tmp_name'], "data/rooms/$rand_dir_name/" . $_FILES['img1']['name']);
+                                    move_uploaded_file(@$_FILES['img2']['tmp_name'], "data/rooms/$rand_dir_name/" . $_FILES['img2']['name']);
+                                    $image_2 = "$rand_dir_name/" . @$_FILES['img1']['name'];
+                                    $image_1 = "$rand_dir_name/" . @$_FILES['img2']['name'];
+                                    $sql = "UPDATE `pages_room` SET `img_1`='$image_1',`img_2`='$image_2' WHERE `id`='$data_id'";
+                                    $query = mysqli_query($conn, $sql);
+                                   
+                                    echo "<meta http-equiv=\"refresh\" content=\"0; url=edit-rooms.php?code=$token\">";
+                                    exit();
+                                }
+                                }
+                            }
+                        ?>
+                        <form action='edit-rooms.php?code=<?=$token?>' method='POST' enctype='multipart/form-data'>
+                            <input type='file' name='img1' class='choose_file_style'>
+                            <input type='file' name='img2' class='choose_file_style'><br><br>
+                            <input type='submit' name='upload_img<?=$data_id?>' value='Upload' class='button_styler'>
+                        </form>
+                    </div>
+                    </div>
+                    </div>
                     </div>
                                 <?php
                             }

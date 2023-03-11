@@ -303,7 +303,7 @@ box-shadow: 7px 7px 9px -7px rgba(179,166,179,1);
     left: 0;
     margin: auto;
     background: #fff;
-    height: 420px;
+    height: 440px;
     width: 400px;
     padding: 40px;
     border: 1px solid #ccc;
@@ -464,7 +464,6 @@ box-shadow: 7px 7px 9px -7px rgba(179,166,179,1);
     padding: 20px;
     border-top: 3px solid #eee;
     background: #fff;
-    margin-top: 60px;
 }
 .pre-footer .flex-container {
     display: flex;
@@ -476,7 +475,6 @@ box-shadow: 7px 7px 9px -7px rgba(179,166,179,1);
 footer {
     width: 100%;
     background: #4ca64c;
-    margin-top: 20px;
     border-top: 5px solid #4ca64c;
     padding: 10px;
 }

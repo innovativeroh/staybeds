@@ -47,8 +47,10 @@
                     </div>
                     </div>
                         <?php } ?>
+                        <?php if (isset($_SESSION['username'])) {?>
                         <button class="header_button" style='margin-right: 10px;'><i class="fa-solid fa-bell"></i></button>
                         <button chref="" data-modaal-content-source="#loginer" data-modaal-type="inline" data-modaal-animation="fade" class="header_button modaal" style='margin-right: 10px;'><i class="fa-solid fa-circle-plus" style='color: #4ca64c;'></i></button>
+                            <?php } ?>
                     </div>
         </div>
     </div>

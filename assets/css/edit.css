@@ -265,6 +265,7 @@
     border-radius: 10px;
     margin-top: 10px;
 }
+
 .flex_box {
     flex: 1;
 }
@@ -282,10 +283,23 @@
 .delete_box_area {
     width: auto !important;
     float: right;
-    background-color: #6aa84f !important;
+    background-color: #fff !important;
     border: 1px solid #6aa84f !important;
+    color: #317431 !important;
+    margin-left: 10px;
+    transition: all ease 300ms;
+}
+.delete_box_area:hover {
+    background-color: #6aa84f !important;
     color: #fff !important;
 }
 .delete_box_area i {
     padding: 0px !important;
+}
+.choose_file_style {
+    padding: 10px;
+    box-sizing: border-box;
+    border: 2px dashed #eee;
+    width: 100%;
+    margin-top: 10px;
 }

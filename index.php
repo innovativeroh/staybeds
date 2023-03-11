@@ -44,10 +44,11 @@
         $name = $rows['name'];
         $price = $rows['price'];
         $token = $rows['token'];
-        $sql2 = "SELECT * FROM `pages_media` ORDER BY `id` LIMIT 1";
+        $sql2 = "SELECT * FROM `pages_room` WHERE `connection`='$id' ORDER BY `id` LIMIT 1";
         $query2 = mysqli_query($conn, $sql2);
         $row = mysqli_fetch_assoc($query2);
-    ?><div  onclick="location.href='page.php?code=<?=$token?>';" class="carousel-cell" style="background-color: #317431; background-image: url(<?=$url?>); background-size: cover;">
+        $img_1 = $row['img_1'];
+    ?><div  onclick="location.href='page.php?code=<?=$token?>';" class="carousel-cell" style="background-color: #317431; background-image: url(data/rooms/<?=$img_1?>); background-size: cover;">
         <div class="carousel-overlay">
           <div class="name-location">
               <h3><?=$name?></h3>
@@ -58,66 +59,26 @@
     <?php
     }
   ?>
-        <div class="carousel-cell" style="background-color: #317431; background-image: url('assets/img/room (1).jpg'); background-size: cover;">
-  <div class="carousel-overlay">
-    <div class="name-location">
-        <h3>Himanshu's PG</h3>
-        <p style='display: inline; color: #fff;'><i class="fa-solid fa-location-crosshairs"></i> Udaipur</p><span>₹3,000</span>
-    </div>
-    </div>
-  </div>
-  <div class="carousel-cell" style="background-color: #317431; background-image: url('assets/img/room (2).jpg'); background-size: cover;">
-  <div class="carousel-overlay">
-    <div class="name-location">
-        <h3>Himanshu's PG</h3>
-        <p style='display: inline; color: #fff;'><i class="fa-solid fa-location-crosshairs"></i> Udaipur</p><span>₹3,000</span>
-    </div>
-    </div>
-  </div>
-  <div class="carousel-cell" style="background-color: #317431; background-image: url('assets/img/room (3).jpg'); background-size: cover;">
-  <div class="carousel-overlay">
-    <div class="name-location">
-        <h3>Himanshu's PG</h3>
-        <p style='display: inline; color: #fff;'><i class="fa-solid fa-location-crosshairs"></i> Udaipur</p><span>₹3,000</span>
-    </div>
-    </div>
-  </div>
-  <div class="carousel-cell" style="background-color: #317431; background-image: url('assets/img/room (4).jpg'); background-size: cover;">
-  <div class="carousel-overlay">
-    <div class="name-location">
-        <h3>Himanshu's PG</h3>
-        <p style='display: inline; color: #fff;'><i class="fa-solid fa-location-crosshairs"></i> Udaipur</p><span>₹3,000</span>
-    </div>
-    </div>
-  </div>
-  <div class="carousel-cell" style="background-color: #317431; background-image: url('assets/img/room (5).jpg'); background-size: cover;">
-  <div class="carousel-overlay">
-    <div class="name-location">
-        <h3>Himanshu's PG</h3>
-        <p style='display: inline; color: #fff;'><i class="fa-solid fa-location-crosshairs"></i> Udaipur</p><span>₹3,000</span>
-    </div>
-    </div>
-  </div>
   </div>
 <br><br>
   <div class="app_area">
       <div class="flex_container">
         <div class="flex_box">
             <center><img src='./assets/img/landing_img.svg' width="60%">
-            <h3>Your Content Here</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus maximus sagittis eros sed suscipit. Sed in laoreet tellus. Aenean suscipit lacus vel ante sollicitudin ullamcorper. Maecenas ut leo et lorem blandit scelerisque vel id neque. Sed gravida nibh diam, at bibendum enim placerat quis. Aliquam faucibus pellentesque nunc, non laoreet turpis ultricies ac. Donec pellentesque erat quis massa cursus, vitae aliquam risus tempus. Fusce hendrerit enim nisi, </p>
+            <h3>About Us</h3>
+            <p>Welcome to Staybeds, the premier online platform for booking paying guest accommodations. Our mission is to make it easy for travelers and students to find safe, comfortable, and affordable accommodations that meet their needs and budget.</p>
             </center>
         </div>
         <div class="flex_box">
         <center><img src='./assets/img/landing_img2.svg' width="40%">
-            <h3>Your Content Here</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus maximus sagittis eros sed suscipit. Sed in laoreet tellus. Aenean suscipit lacus vel ante sollicitudin ullamcorper. Maecenas ut leo et lorem blandit scelerisque vel id neque. Sed gravida nibh diam, at bibendum enim placerat quis. Aliquam faucibus pellentesque nunc, non laoreet turpis ultricies ac. Donec pellentesque erat quis massa cursus, vitae aliquam risus tempus. Fusce hendrerit enim nisi, </p>
+            <h3>Travel and Technology</h3>
+            <p>Founded by a team of travel and technology enthusiasts, Staybeds was created to address the growing demand for flexible and convenient accommodation options. Our team has a wealth of experience in the travel and technology industries and a passion for providing our users with the best possible experience.</p>
             </center>
         </div>
         <div class="flex_box">
         <center><img src='./assets/img/landing_img3.svg' width="60%">
-            <h3>Your Content Here</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus maximus sagittis eros sed suscipit. Sed in laoreet tellus. Aenean suscipit lacus vel ante sollicitudin ullamcorper. Maecenas ut leo et lorem blandit scelerisque vel id neque. Sed gravida nibh diam, at bibendum enim placerat quis. Aliquam faucibus pellentesque nunc, non laoreet turpis ultricies ac. Donec pellentesque erat quis massa cursus, vitae aliquam risus tempus. Fusce hendrerit enim nisi, </p>
+            <h3>Features</h3>
+            <p>With Staybeds, you can search and compare paying guest accommodations across multiple cities, view detailed property information, and book your stay with just a few clicks. Our user-friendly platform and advanced search filters make it easy to find the perfect accommodation to suit your needs, whether you're looking for a short-term stay or a long-term stay</p>
             </center>
         </div>
     </div>
@@ -132,10 +93,11 @@
         $name = $rows['name'];
         $price = $rows['price'];
         $token = $rows['token'];
-        $sql2 = "SELECT * FROM `pages_media` ORDER BY `id` LIMIT 1";
+        $sql2 = "SELECT * FROM `pages_room` WHERE `connection`='$id' ORDER BY `id` LIMIT 1";
         $query2 = mysqli_query($conn, $sql2);
         $row = mysqli_fetch_assoc($query2);
-    ?><div  onclick="location.href='page.php?code=<?=$token?>';" class="carousel-cell" style="background-color: #fff;">
+        $img_1 = $row['img_1'];
+    ?><div  onclick="location.href='page.php?code=<?=$token?>';" class="carousel-cell" style="background-color: #317431; background-image: url(data/rooms/<?=$img_1?>); background-size: cover;">
         <div class="carousel-overlay">
           <div class="name-location">
               <h3><?=$name?></h3>
@@ -146,47 +108,6 @@
     <?php
     }
   ?>
-        <div class="carousel-cell" style="background-color: #fff; height: 380px;">
-  <div class="carousel-overlay">
-    <div class="name-location">
-        <h3>Himanshu's PG</h3>
-        <p style='display: inline; color: #fff;'><i class="fa-solid fa-location-crosshairs"></i> Udaipur</p><span>₹3,000</span>
-    </div>
-    </div>
-  </div>
-  <div class="carousel-cell" style="background-color: #fff;">
-  <div class="carousel-overlay">
-    <div class="name-location">
-        <h3>Himanshu's PG</h3>
-        <p style='display: inline; color: #fff;'><i class="fa-solid fa-location-crosshairs"></i> Udaipur</p><span>₹3,000</span>
-    </div>
-    </div>
-  </div>
-  <div class="carousel-cell" style="background-color: #fff;">
-  <div class="carousel-overlay">
-    <div class="name-location">
-        <h3>Himanshu's PG</h3>
-        <p style='display: inline; color: #fff;'><i class="fa-solid fa-location-crosshairs"></i> Udaipur</p><span>₹3,000</span>
-    </div>
-    </div>
-  </div>
-        <div class="carousel-cell" style="background-color: #fff;">
-  <div class="carousel-overlay">
-    <div class="name-location">
-        <h3>Himanshu's PG</h3>
-        <p style='display: inline; color: #fff;'><i class="fa-solid fa-location-crosshairs"></i> Udaipur</p><span>₹3,000</span>
-    </div>
-    </div>
-  </div>
-  <div class="carousel-cell" style="background-color: #317431; background-image: url('assets/img/room (2).jpg'); background-size: cover;">
-  <div class="carousel-overlay">
-    <div class="name-location">
-        <h3>Himanshu's PG</h3>
-        <p style='display: inline; color: #fff;'><i class="fa-solid fa-location-crosshairs"></i> Udaipur</p><span>₹3,000</span>
-    </div>
-    </div>
-  </div>
-
   </div><br><br><br>
   <h2 style="color: #222;">Discover Our Beautiful <f style='font-weight: 300;'>India</f> <i class="fa-solid fa-arrow-trend-up"></i></h2>
   <div class="carousel" data-flickity='{ "autoPlay": true, "freeScroll": true,

@@ -1,5 +1,5 @@
 .more_wrapper {
-    max-width: 1200px;
+    max-width: 1300px;
     margin-right: auto;
     margin-left: auto;
 }
@@ -53,7 +53,7 @@
 }
 .booking_area {
     width: 100%;
-    padding: 40px;
+    padding: 20px;
     padding-top: 20px;
     box-sizing: border-box;
     border-radius: 10px;
@@ -132,4 +132,35 @@
 .carousel-cell {
     width: 100%;
 }
+}
+.room_box_area {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 10px 20px;
+    box-sizing: border-box;
+    border: 1px solid #eee;
+    border-radius: 10px;
+    margin-top: 10px;
+    position: relative;
+}
+.book_button {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    width: auto !important;
+}
+.flex_box {
+    flex: 1;
+}
+.room_box_area .flex_box i {
+    margin-right: 10px;
+    color: 888;
+}
+.spilited_comma {
+    display: inline;
+    margin-right: 10px;
+    border-radius: 10px;
+    color: #317431;
+    transition: all ease 300ms;
 }

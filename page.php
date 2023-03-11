@@ -47,10 +47,16 @@
                 <br>
                 <h1 style='font-weight: 500; font-size: 28px; line-height: 0px; display: inline;'><?=$name?> - <?=$category?>
                 <?php if($global_id == $admin) {
+                
                 ?>
                 <a href='edit.php?code=<?=$token?>'><button style='float: right;' class='page_edit_btn'><i class="fa-solid fa-pen-to-square"></i> Edit</button></h1></a>
                 <?php
-            }
+            } else {
+                ?>
+<a href='index.php'><button style='float: right;' class='page_edit_btn'><i class="fa-sharp fa-solid fa-arrow-left"></i> Go Back</button></h1></a>
+                
+                <?php
+}
                 ?>
                 <div style='clear: both'></div>
                 <a href='#' style='color: #000; font-size: 14px;'><i class="fa-solid fa-location-crosshairs"></i> <?=$city.", ".$zip_code?></a>

@@ -6,33 +6,42 @@
     <title>Welcome To Staybeds</title>
 </head>
 <br>
+<div id="wrapper">
         <div class="search_container">
             <div class="overlay">
             <div class="inner_wrapper">
-            <br><br>
-            <h1 style='line-height: 0px;'>Discover</h1>
-            <p style='font-size: 13.5px;'>Discover a wide range of affordable and convenient PG options across the city with just a few clicks</p>
-            <form action="search.php">
+            <p style='line-height: 20px; display: inline;'>- Hospitality making your guests feel like they're at home, even if you wish they were.</p><br>
+            <p style='line-height: 60px; display: inline; font-size: 42px; font-weight: 700;'>Justine Vogt</p>
+            <div class='searcher'>
+<form action="search.php" method='GET' style='display: inline;'>
             <div class="search_input_container">
-                    <div class="seach_input_flex" style='flex: 6;'>
-                    <input type="text" name="q" class="search_main_inp" placeholder="What are you looking for?">
+                    <div class="seach_input_flex" style='flex: 8;'>
+                    <input type="text" name="q" class="search_main_inp" style='font-size: 18px; font-weight: 300;' placeholder="What are you looking for?">
                     </div>
-                    <div class="seach_input_flex" style='flex: 2;'>
+                    <div class="seach_input_flex" style='flex: 4; border-bottom: 2px solid #666;'>
                     <select name="city" class="search_main_inp">
-                        <option value="Delhi">Delhi</option>
-                        <option value="Mumbai">Mumbai</option>
+                    <option name='<?=$city_term?>'>Location</option>
+                <?php
+                    $sql = "SELECT * FROM `config_city` ORDER BY `value`";
+                    $query = mysqli_query($conn, $sql);
+                    while($rows = mysqli_fetch_assoc($query)) {
+                        $value = $rows['value'];
+                        echo "<option name='$value'>$value</option>";
+                    }
+                ?>
+            </select>
                     </select>
                 </div>
-                    <div class="seach_input_flex" style='flex: 1.5;'>
-                        <button type="submit" class="search_main_inp_btn">Search</button>
+                    <div class="seach_input_flex" style='flex: 1;'>
+                        <button type="submit" class="search_main_inp_btn"><i class="fa-solid fa-magnifying-glass"></i></button>
                     </div>
                     </div>
         </form>
-        <br><br>
             </div>
+          </div>
 </div>
         </div>
-        <div id="wrapper">
+
         <br>
         <h2 style="color: #222;">Top <f style='font-weight: 300;'>Ratings </f> <i class="fa-solid fa-arrow-trend-up"></i></h2>
         <div class="carousel" data-flickity='{ "autoPlay": true, "wrapAround": true }'>
@@ -61,28 +70,32 @@
   ?>
   </div>
 <br><br>
+  </div>
   <div class="app_area">
+    <div id='wrapper'>
       <div class="flex_container">
         <div class="flex_box">
-            <center><img src='./assets/img/landing_img.svg' width="60%">
+            <center><img src='./assets/img/landing (1).png' width="100%">
             <h3>About Us</h3>
             <p>Welcome to Staybeds, the premier online platform for booking paying guest accommodations. Our mission is to make it easy for travelers and students to find safe, comfortable, and affordable accommodations that meet their needs and budget.</p>
             </center>
         </div>
         <div class="flex_box">
-        <center><img src='./assets/img/landing_img2.svg' width="40%">
+        <center><img src='./assets/img/landing (2).png' width="100%">
             <h3>Travel and Technology</h3>
             <p>Founded by a team of travel and technology enthusiasts, Staybeds was created to address the growing demand for flexible and convenient accommodation options. Our team has a wealth of experience in the travel and technology industries and a passion for providing our users with the best possible experience.</p>
             </center>
         </div>
         <div class="flex_box">
-        <center><img src='./assets/img/landing_img3.svg' width="60%">
+        <center><img src='./assets/img/landing (3).png' width="100%">
             <h3>Features</h3>
             <p>With Staybeds, you can search and compare paying guest accommodations across multiple cities, view detailed property information, and book your stay with just a few clicks. Our user-friendly platform and advanced search filters make it easy to find the perfect accommodation to suit your needs, whether you're looking for a short-term stay or a long-term stay</p>
             </center>
         </div>
     </div>
   </div>
+  </div>
+  <div id='wrapper'>
   <h2 style="color: #222;">Dis<f style='font-weight: 300;'>counts</f> <i class="fa-solid fa-arrow-trend-up"></i></h2>
         <div class="carousel" data-flickity='{ "autoPlay": true, "wrapAround": true }'>
         <?php

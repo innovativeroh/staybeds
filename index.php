@@ -6,9 +6,6 @@ if (isset($_SESSION['username'])) {
         echo "<meta http-equiv=\"refresh\" content=\"0; url=verification.php\">";
         exit();
     }
-} else {
-    echo "<meta http-equiv=\"refresh\" content=\"0; url=index.php\">";
-    exit();
 }
 ?>
 <head>

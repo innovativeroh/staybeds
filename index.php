@@ -1,4 +1,16 @@
 <?php include_once("config/header.php"); ?>
+<?php
+if (isset($_SESSION['username'])) {
+    if (!$global_verified == "0") {
+    } else {
+        echo "<meta http-equiv=\"refresh\" content=\"0; url=verification.php\">";
+        exit();
+    }
+} else {
+    echo "<meta http-equiv=\"refresh\" content=\"0; url=index.php\">";
+    exit();
+}
+?>
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">

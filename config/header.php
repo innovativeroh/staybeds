@@ -73,7 +73,7 @@
                                     return substr(str_shuffle(str_repeat($x='0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ', ceil($length/strlen($x)) )),1,$length);
                                 }
                                 $token = generateRandomString();
-                            $sql = "INSERT INTO `pages`(`id`, `name`, `price`, `bio`, `token`, `city`, `pre_address`, `address`, `zip_code`, `admin`, `author`, `date`, `deleted`) VALUES (null,'$pg_name','','','$token','$city','','','','$global_id','$author','$date','0')";
+                            $sql = "INSERT INTO `pages`(`id`, `name`, `price`, `bio`, `token`, `mobile`, `city`, `pre_address`, `address`, `zip_code`, `admin`, `author`, `date`, `deleted`) VALUES (null,'$pg_name','','','$token','','$city','','','','$global_id','$author','$date','0')";
                             $query = mysqli_query($conn, $sql);
                             echo "<meta http-equiv=\"refresh\" content=\"0; url=edit.php?code=$token\">";
                     exit();

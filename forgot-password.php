@@ -1,4 +1,11 @@
 <?php include_once("config/header.php"); ?>
+<?php
+    if (isset($_SESSION['username'])) {
+        echo "<meta http-equiv=\"refresh\" content=\"0; url=index.php\">";
+        exit();
+    } else {
+    }
+    ?>
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">

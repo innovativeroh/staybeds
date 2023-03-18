@@ -212,6 +212,9 @@
             <div class="modal-body">
                 <div class="modal-content">
                     <div id="loginMobile">
+                    <?php
+if (isset($_SESSION['username'])) {
+?>
                         <h2>Book Now</h2>
                         <p class='label_area'>Booking Type</p>
 
@@ -221,6 +224,17 @@
                         <input type='date' name='booking_sharing_type' class='huge_input'>
                         <br><br>
                         <button type="submit" name="create_pg" class="button_styler">Book Now <i class="fa-sharp fa-solid fa-arrow-right"></i></button>
+
+<?php
+} else {
+    ?>
+    <h2>Login </h2>
+                        <p class='label_area'>To become a part of this room</p>
+                        <a href='login.php'><button name="create_pg" class="button_styler">Login <i class="fa-sharp fa-solid fa-arrow-right"></i></button></a>
+
+    <?php
+}
+?>
                     </div>
                             </div>
                             </div>

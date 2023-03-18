@@ -45,6 +45,8 @@
                     <p style='font-weight: 600; letter-spacing: 1px; color: #333;'>Settings</p>
                     <a href='edit.php?code=<?=$token?>'><button><i class="fa-solid fa-gauge"></i> Dashboard</button></a>
                     <a href='edit-rooms.php?code=<?=$token?>'><button class='active'><i class="fa-solid fa-people-roof"></i> Rooms</button></a>
+                    <a href='edit-config.php?code=<?=$token?>'><button><i class="fa-solid fa-gear"></i> Config</button></a>
+                    
                     <a href='page.php?code=<?=$token?>'><button><i class="fa-solid fa-eye"></i> View Page</button></a>
                 </div>
             </div>
@@ -252,7 +254,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>    
 <div class='other_page_cont' style='display: none;'>
 <h2><button class='config_back_btn' onclick='change_page_func()'><i class="fa-solid fa-arrow-left-long"></i></button> Select Amenities</h2>
-
+<div style='position: relative; width: 100%; height: 450px; overflow-y: scroll;'>
 <div class='amenities_flex_cont'>
     <div id='flex'>
         <p><i class="fa-solid fa-tv"></i> Television</p>
@@ -287,11 +289,86 @@
 </div>
 <div class='amenities_flex_cont'>
     <div id='flex'>
-        <p><i class="fa-solid fa-mattress-pillow"></i> Matress</p>
+        <p><i class="fa-solid fa-bed"></i> Matress</p>
     </div>
     <div id='flex'>
         <input type='checkbox' value='Matress' class='checkbox_inp'>
     </div>
+</div>
+<div class='amenities_flex_cont'>
+    <div id='flex'>
+        <p><i class="fa-solid fa-mattress-pillow"></i> Pillow</p>
+    </div>
+    <div id='flex'>
+        <input type='checkbox' value='Pillow' class='checkbox_inp'>
+    </div>
+</div>
+<div class='amenities_flex_cont'>
+    <div id='flex'>
+        <p><i class="fa-solid fa-toilet-portable"></i> Side Table</p>
+    </div>
+    <div id='flex'>
+        <input type='checkbox' value='Side Table' class='checkbox_inp'>
+    </div>
+</div>
+<div class='amenities_flex_cont'>
+    <div id='flex'>
+        <p><i class="fa-solid fa-hot-tub-person"></i> Geyser</p>
+    </div>
+    <div id='flex'>
+        <input type='checkbox' value='Geyser' class='checkbox_inp'>
+    </div>
+</div>
+<div class='amenities_flex_cont'>
+    <div id='flex'>
+        <p><i class="fa-solid fa-boxes-packing"></i> Storage Shelf</p>
+    </div>
+    <div id='flex'>
+        <input type='checkbox' value='Storage Shelf' class='checkbox_inp'>
+    </div>
+</div>
+<div class='amenities_flex_cont'>
+    <div id='flex'>
+        <p><i class="fa-regular fa-window-restore"></i> Windows</p>
+    </div>
+    <div id='flex'>
+        <input type='checkbox' value='Windows' class='checkbox_inp'>
+    </div>
+</div>
+<div class='amenities_flex_cont'>
+    <div id='flex'>
+        <p><i class="fa-solid fa-shirt"></i> Iron</p>
+    </div>
+    <div id='flex'>
+        <input type='checkbox' value='Iron' class='checkbox_inp'>
+    </div>
+</div>
+<div class='amenities_flex_cont'>
+    <div id='flex'>
+        <p><i class="fa-solid fa-fan"></i> Desert Cooler</p>
+    </div>
+    <div id='flex'>
+        <input type='checkbox' value='Desert Cooler' class='checkbox_inp'>
+    </div>
+</div>
+<div class='amenities_flex_cont'>
+    <div id='flex'>
+        <p><i class="fa-solid fa-graduation-cap"></i> Study Table</p>
+    </div>
+    <div id='flex'>
+        <input type='checkbox' value='Study Table' class='checkbox_inp'>
+    </div>
+</div>
+<div class='amenities_flex_cont'>
+    <div id='flex'>
+        <p><i class="fa-solid fa-bowl-food"></i> Food</p>
+    </div>
+    <div id='flex'>
+        <input type='checkbox' value='Food' class='checkbox_inp'>
+    </div>
+</div>
+
+
 </div>
 <br>
 <input type="text" name="text" id="pre_amenities" style="visibility: hidden;">

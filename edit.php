@@ -46,6 +46,7 @@
                     <p style='font-weight: 600; letter-spacing: 1px; color: #333;'>Settings</p>
                     <a href='edit.php?code=<?=$token?>'><button class='active'><i class="fa-solid fa-gauge"></i> Dashboard</button></a>
                     <a href='edit-rooms.php?code=<?=$token?>'><button><i class="fa-solid fa-people-roof"></i> Rooms</button></a>
+                    <a href='edit-config.php?code=<?=$token?>'><button><i class="fa-solid fa-gear"></i> Config</button></a>
                     <a href='page.php?code=<?=$token?>'><button><i class="fa-solid fa-eye"></i> View Page</button></a>
                 </div>
             </div>

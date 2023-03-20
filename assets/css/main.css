@@ -541,6 +541,16 @@ footer .flex-container .flex a {
     outline: none;
     transition: all ease 300ms;
 }
+.a4-sheet {
+    margin-right: auto;
+    margin-left: auto;
+    max-width: 1240px;
+    padding: 40px;
+    border: 1px solid #eee;
+    margin-top: 20px;
+    background: #fff;
+    box-sizing: border-box;
+}
 .city_selector:focus {
     background: #b6d7a8;
     border: 1px solid #317431;

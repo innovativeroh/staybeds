@@ -156,6 +156,7 @@
     </div>
     <div class="flex" style='padding: 0px; flex: 4; margin: 20px 10px; border-radius: 10px;'>
         <div class='booking_area'>
+
         <?php
                         $sql = "SELECT * FROM `pages_room` WHERE `connection`='$id'";
                         $query = mysqli_query($conn, $sql);
@@ -207,7 +208,6 @@
                             </p>
                     </div>
                     </div>
-
                     <div id="bookinger<?=$data_id?>" style="display:none;">
             <div class="modal-body">
                 <div class="modal-content">
@@ -215,16 +215,24 @@
                     <?php
 if (isset($_SESSION['username'])) {
 ?>
+        <?php
+                            if(isset($_POST['book_pg'.$data_id])) {
+                                $booking_date = @$_POST['booking_date'];
+                                $date = date('d-m-y');
+                                $sql33 = "INSERT INTO `bookings`(`id`, `user`, `page`, `category`, `booking_date`, `query_date`) VALUES (null,'$global_id','$id','$data_sharing_type','$booking_date','$date')";
+                                $query33 = mysqli_query($conn, $sql33);
+                            }
+                        ?>
                         <h2>Book Now</h2>
                         <p class='label_area'>Booking Type</p>
-
-                        <input type='text' name='booking_sharing_type' value='<?=$data_sharing_type?>' class='huge_input' disabled='disabled'>
+                        <form action='page.php?code=<?=$token?>' method='POST'>
+                        <input type='text' name='booking_cat' value='<?=$data_sharing_type?>' class='huge_input' disabled='disabled'>
                         <br><br>
                         <p class='label_area'>Select Date</p>
-                        <input type='date' name='booking_sharing_type' class='huge_input'>
+                        <input type='date' name='booking_date' min="<?=date('Y-m-d');?>" value="<?=date('Y-m-d');?>" class='huge_input'>
                         <br><br>
-                        <button type="submit" name="create_pg" class="button_styler">Book Now <i class="fa-sharp fa-solid fa-arrow-right"></i></button>
-
+                        <button type="submit" name="book_pg<?=$data_id?>" class="button_styler">Book Now <i class="fa-sharp fa-solid fa-arrow-right"></i></button>
+                        </form>
 <?php
 } else {
     ?>

@@ -32,8 +32,6 @@
                     </div>
                     </div>
                     <div class="dropdown_menu">
-                            <button><i class="fa-solid fa-user"></i>&nbsp; Edit Profile</button><br>
-                            <button><i class="fa-solid fa-message"></i> Queries</button><br>
                             <a href='logout.php'><button><i class="fa-solid fa-right-from-bracket"></i> Logout</button></a>
                         </div>
                     </div>
@@ -48,7 +46,6 @@
                     </div>
                         <?php } ?>
                         <?php if (isset($_SESSION['username'])) {?>
-                        <button class="header_button" style='margin-right: 10px;'><i class="fa-solid fa-bell"></i></button>
                         <button chref="" data-modaal-content-source="#loginer" data-modaal-type="inline" data-modaal-animation="fade" class="header_button modaal" style='margin-right: 10px;'><i class="fa-solid fa-circle-plus" style='color: #4ca64c;'></i></button>
                             <?php } ?>
                     </div>
